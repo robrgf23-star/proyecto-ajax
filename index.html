@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de AJAX - Proyecto AJAX</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <h1><i class="fas fa-sync-alt"></i> Proyecto AJAX</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#que-es">¿Qué es AJAX?</a></li>
+                    <li><a href="#como-funciona">Cómo Funciona</a></li>
+                    <li><a href="#ejemplos">Ejemplos</a></li>
+                    <li><a href="#mejores-practicas">Mejores Prácticas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Sección Hero -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Dominando AJAX</h1>
+                <p>Aprende a crear aplicaciones web dinámicas y responsivas con tecnología AJAX</p>
+                <div class="hero-buttons">
+                    <a href="#que-es" class="btn btn-primary">Comenzar Aprendizaje</a>
+                    <a href="#ejemplos" class="btn btn-secondary">Ver Ejemplos</a>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <div class="ajax-loader">
+                    <div class="loader"></div>
+                    <span>Loading...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección ¿Qué es AJAX? -->
+        <section id="que-es" class="content-section">
+            <div class="container">
+                <article>
+                    <h2>¿Qué es AJAX?</h2>
+                    
+                    <div class="definition-card">
+                        <div class="definition-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="definition-content">
+                            <h3>AJAX - Asynchronous JavaScript And XML</h3>
+                            <p>AJAX es una técnica de desarrollo web que permite a las aplicaciones web enviar y recibir datos de un servidor de manera asíncrona, sin necesidad de recargar la página completa.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-info">
+                        <h3>Características Principales</h3>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-bolt"></i>
+                                <h4>Asíncrono</h4>
+                                <p>Las solicitudes se realizan en segundo plano sin bloquear la interfaz de usuario.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-sync"></i>
+                                <h4>Sin Recarga</h4>
+                                <p>No requiere recargar la página completa para actualizar el contenido.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <h4>Mejor Rendimiento</h4>
+                                <p>Reduce el ancho de banda y mejora la experiencia del usuario.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Responsivo</h4>
+                                <p>Crea aplicaciones web más interactivas y dinámicas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-info">
+                        <h3>Componentes de AJAX</h3>
+                        <div class="components-grid">
+                            <div class="component-card">
+                                <h4>XMLHttpRequest</h4>
+                                <p>Objeto JavaScript que permite hacer solicitudes HTTP a servidores.</p>
+                                <div class="code-example">
+                                    <pre><code>const xhr = new XMLHttpRequest();</code></pre>
+                                </div>
+                            </div>
+                            <div class="component-card">
+                                <h4>JavaScript</h4>
+                                <p>Lenguaje que controla la lógica y manipula el DOM.</p>
+                            </div>
+                            <div class="component-card">
+                                <h4>DOM</h4>
+                                <p>Modelo de objetos del documento para actualizar la interfaz.</p>
+                            </div>
+                            <div class="component-card">
+                                <h4>JSON/XML</h4>
+                                <p>Formatos para intercambiar datos entre cliente y servidor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Cómo Funciona -->
+        <section id="como-funciona" class="content-section dark-section">
+            <div class="container">
+                <article>
+                    <h2>Cómo Funciona AJAX</h2>
+                    
+                    <div class="workflow">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Evento en el Cliente</h4>
+                                <p>El usuario realiza una acción (click, submit, etc.)</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Crear XMLHttpRequest</h4>
+                                <p>JavaScript crea un objeto para la solicitud HTTP</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Enviar Solicitud</h4>
+                                <p>Se envía la solicitud al servidor de forma asíncrona</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Procesar en Servidor</h4>
+                                <p>El servidor procesa la solicitud y genera una respuesta</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Recibir Respuesta</h4>
+                                <p>El cliente recibe y procesa los datos del servidor</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <h4>Actualizar DOM</h4>
+                                <p>JavaScript actualiza la página con los nuevos datos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-info">
+                        <h3>Flujo de Trabajo de AJAX</h3>
+                        <div class="ajax-diagram">
+                            <div class="diagram-container">
+                                <div class="browser-side">
+                                    <h4>Cliente (Navegador)</h4>
+                                    <div class="diagram-step">
+                                        <div class="step-icon"><i class="fas fa-user"></i></div>
+                                        <div class="step-text">Evento del Usuario</div>
+                                    </div>
+                                    <div class="diagram-step">
+                                        <div class="step-icon"><i class="fas fa-code"></i></div>
+                                        <div class="step-text">JavaScript crea XMLHttpRequest</div>
+                                    </div>
+                                    <div class="diagram-step">
+                                        <div class="step-icon"><i class="fas fa-sync"></i></div>
+                                        <div class="step-text">Procesar Respuesta</div>
+                                    </div>
+                                    <div class="diagram-step">
+                                        <div class="step-icon"><i class="fas fa-paint-brush"></i></div>
+                                        <div class="step-text">Actualizar DOM</div>
+                                    </div>
+                                </div>
+                                <div class="network-arrow">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="server-side">
+                                    <h4>Servidor</h4>
+                                    <div class="diagram-step">
+                                        <div class="step-icon"><i class="fas fa-server"></i></div>
+                                        <div class="step-text">Recibir Solicitud</div>
+                                    </div>
+                                    <div class="diagram-step">
+                                        <div class="step-icon"><i class="fas fa-database"></i></div>
+                                        <div class="step-text">Procesar Datos</div>
+                                    </div>
+                                    <div class="diagram-step">
+                                        <div class="step-icon"><i class="fas fa-reply"></i></div>
+                                        <div class="step-text">Enviar Respuesta</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Ejemplos -->
+        <section id="ejemplos" class="content-section">
+            <div class="container">
+                <article>
+                    <h2>Ejemplos Prácticos de AJAX</h2>
+                    
+                    <div class="section-info">
+                        <h3>Ejemplo 1: XMLHttpRequest Básico</h3>
+                        <div class="example-container">
+                            <div class="code-example">
+                                <h4>Código JavaScript:</h4>
+                                <pre><code>// Crear objeto XMLHttpRequest
+const xhr = new XMLHttpRequest();
+
+// Configurar la solicitud
+xhr.open('GET', 'https://api.ejemplo.com/datos', true);
+
+// Definir función para manejar la respuesta
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        const datos = JSON.parse(xhr.responseText);
+        console.log(datos);
+        // Actualizar la interfaz con los datos
+        document.getElementById('resultado').innerHTML = 
+            JSON.stringify(datos, null, 2);
+    }
+};
+
+// Manejar errores
+xhr.onerror = function() {
+    console.error('Error en la solicitud');
+};
+
+// Enviar la solicitud
+xhr.send();</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-info">
+                        <h3>Ejemplo 2: Fetch API Moderna</h3>
+                        <div class="example-container">
+                            <div class="code-example">
+                                <h4>Usando Fetch API (Recomendado):</h4>
+                                <pre><code>// Solicitud GET simple
+fetch('https://api.ejemplo.com/usuarios')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la red');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        mostrarUsuarios(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+// Solicitud POST con datos
+fetch('https://api.ejemplo.com/usuarios', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        nombre: 'Juan',
+        email: 'juan@ejemplo.com'
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data));</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo Interactivo -->
+                    <div class="section-info">
+                        <h3>Demo Interactivo: Cargar Datos con AJAX</h3>
+                        <div class="demo-container">
+                            <div class="demo-controls">
+                                <button id="cargarUsuarios" class="btn btn-primary">
+                                    <i class="fas fa-users"></i> Cargar Usuarios
+                                </button>
+                                <button id="cargarPosts" class="btn btn-secondary">
+                                    <i class="fas fa-file-alt"></i> Cargar Posts
+                                </button>
+                                <button id="cargarError" class="btn btn-danger">
+                                    <i class="fas fa-exclamation-triangle"></i> Simular Error
+                                </button>
+                            </div>
+                            
+                            <div class="demo-status">
+                                <div id="estadoCarga" class="estado oculto">
+                                    <div class="loader"></div>
+                                    <span>Cargando datos...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="demo-result">
+                                <h4>Resultados:</h4>
+                                <div id="resultadoDemo" class="resultado-container">
+                                    <p class="mensaje-vacio">Haz clic en un botón para cargar datos...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-info">
+                        <h3>Ejemplo 3: AJAX con jQuery</h3>
+                        <div class="example-container">
+                            <div class="code-example">
+                                <h4>Solicitud AJAX con jQuery:</h4>
+                                <pre><code>// Solicitud GET
+$.ajax({
+    url: 'https://api.ejemplo.com/datos',
+    method: 'GET',
+    dataType: 'json',
+    success: function(data) {
+        // Manipular datos exitosos
+        $('#resultado').html(JSON.stringify(data));
+    },
+    error: function(xhr, status, error) {
+        // Manejar errores
+        console.error('Error:', error);
+    }
+});
+
+// Forma abreviada
+$.getJSON('https://api.ejemplo.com/usuarios', function(data) {
+    console.log(data);
+});</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Mejores Prácticas -->
+        <section id="mejores-practicas" class="content-section dark-section">
+            <div class="container">
+                <article>
+                    <h2>Mejores Prácticas con AJAX</h2>
+                    
+                    <div class="best-practices-grid">
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-spinner"></i>
+                            </div>
+                            <h4>Indicadores de Carga</h4>
+                            <p>Siempre muestra un indicador durante las solicitudes asíncronas para mejorar la experiencia del usuario.</p>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <h4>Manejo de Errores</h4>
+                            <p>Implementa manejo robusto de errores para todas las solicitudes AJAX.</p>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Timeouts</h4>
+                            <p>Configura timeouts apropiados para evitar solicitudes colgadas.</p>
+                        </div>
+                        <div class="practice-card">
+                            <div class="practice-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Seguridad</h4>
+                            <p>Valida y sanitiza todos los datos en el servidor, nunca confíes en el cliente.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-info">
+                        <h3>Código de Ejemplo con Buenas Prácticas</h3>
+                        <div class="code-example">
+                            <pre><code>/**
+ * Función robusta para hacer solicitudes AJAX
+ */
+async function hacerSolicitud(url, opciones = {}) {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        timeout: 10000, // 10 segundos
+        ...opciones
+    };
+
+    try {
+        // Mostrar indicador de carga
+        mostrarCargando();
+        
+        const respuesta = await fetch(url, config);
+        
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
+        
+        const datos = await respuesta.json();
+        return datos;
+        
+    } catch (error) {
+        console.error('Error en la solicitud:', error);
+        mostrarError('No se pudieron cargar los datos');
+        throw error;
+    } finally {
+        // Ocultar indicador de carga
+        ocultarCargando();
+    }
+}
+
+// Uso de la función
+hacerSolicitud('https://api.ejemplo.com/datos')
+    .then(datos => {
+        actualizarInterfaz(datos);
+    })
+    .catch(error => {
+        // Error ya manejado en la función
+    });</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="section-info">
+                        <h3>Consideraciones Importantes</h3>
+                        <div class="considerations-grid">
+                            <div class="consideration-item">
+                                <h4><i class="fas fa-cross-origin"></i> CORS</h4>
+                                <p>Las solicitudes entre diferentes dominios requieren configuración CORS en el servidor.</p>
+                            </div>
+                            <div class="consideration-item">
+                                <h4><i class="fas fa-cookie"></i> Cookies</h4>
+                                <p>Las solicitudes AJAX incluyen cookies del dominio por defecto.</p>
+                            </div>
+                            <div class="consideration-item">
+                                <h4><i class="fas fa-history"></i> Historial</h4>
+                                <p>Los cambios con AJAX no se reflejan en el historial del navegador automáticamente.</p>
+                            </div>
+                            <div class="consideration-item">
+                                <h4><i class="fas fa-search"></i> SEO</h4>
+                                <p>El contenido cargado con AJAX puede no ser indexado por los motores de búsqueda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Proyecto AJAX</h4>
+                    <p>Aprende y domina la tecnología AJAX para crear aplicaciones web modernas y responsivas.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#que-es">¿Qué es AJAX?</a></li>
+                        <li><a href="#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="#ejemplos">Ejemplos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tecnologías</h4>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>XMLHttpRequest</li>
+                        <li>Fetch API</li>
+                        <li>JSON</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Proyecto AJAX. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/ajax-demo.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

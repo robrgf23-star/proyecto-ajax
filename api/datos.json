@@ -1,0 +1,28 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Ana García",
+      "email": "ana@ejemplo.com",
+      "ciudad": "Madrid",
+      "avatar": "👩‍💼"
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos López",
+      "email": "carlos@ejemplo.com",
+      "ciudad": "Barcelona",
+      "avatar": "👨‍💻"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "titulo": "Introducción a AJAX",
+      "contenido": "AJAX revolucionó la forma en que interactúan las aplicaciones web...",
+      "autor": "Ana García",
+      "fecha": "2023-10-01",
+      "likes": 42
+    }
+  ]
+}
